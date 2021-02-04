@@ -12,27 +12,23 @@ body {
   margin-bottom: 1rem;
 }
 
-.button-container {
-  margin-bottom: 0.5rem;
-}
-
-.fade-enter .btn {
+.fade-enter .item {
   opacity: 0;
-  transform: translateX(-100%);
+  transform: translateY(-100%);
 }
-.fade-enter-active .btn {
+.fade-enter-active .item {
   opacity: 1;
-  transform: translateX(0%);
+  transform: translateY(0%);
 }
-.fade-exit .btn {
+.fade-exit .item {
   opacity: 1;
-  transform: translateX(0%);
+  transform: translateY(0%);
 }
-.fade-exit-active .btn {
+.fade-exit-active .item {
   opacity: 0;
-  transform: translateX(100%);
+  transform: translateY(100%);
 }
-.fade-enter-active .btn,
-.fade-exit-active .btn {
+.fade-enter-active .item,
+.fade-exit-active .item {
   transition: opacity 500ms, transform 500ms;
 }
