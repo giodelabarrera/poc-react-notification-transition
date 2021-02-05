@@ -58,11 +58,17 @@ function App() {
 }
 
 function Header({ children }) {
-  return <header>{children}</header>;
+  return <header className="header">{children}</header>;
 }
 
 function Item({ message }) {
-  return <p className="item">{message}</p>;
+  return (
+    <div className="item">
+      <div className="header__inner">
+        <span className="header__title">{message}</span>
+      </div>
+    </div>
+  );
 }
 
 export default App;
