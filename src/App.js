@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
-import { Alert, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "./styles.css";
 
 const NOTIFICATION_TYPE = {
@@ -59,20 +59,6 @@ function App() {
 
 function Header({ children }) {
   return <header className="header">{children}</header>;
-}
-
-function getIcon(type) {
-  return type === NOTIFICATION_TYPE.LIKE ? (
-    <path
-      fill-rule="evenodd"
-      d="M12.001 19c-1.106 0-6.507-4.06-7.72-7.952A4.522 4.522 0 0 1 4 9.502C4 7.02 6.03 5 8.527 5 9.875 5 11.14 5.594 12 6.61A4.536 4.536 0 0 1 15.47 5C17.967 5 20 7.02 20 9.502c0 .504-.09 1.01-.268 1.504-1.197 4.011-6.57 7.994-7.73 7.994z"
-    ></path>
-  ) : type === NOTIFICATION_TYPE.COMMENT ? (
-    <path
-      fill-rule="evenodd"
-      d="M5 7.173C5 5.973 5.897 5 7.006 5h9.988C18.102 5 19 5.982 19 7.173v7.654c0 1.2-.897 2.173-2.006 2.173H7.006C5.898 17 5 16.018 5 14.827V7.173zM8 17h5l-5 3v-3z"
-    ></path>
-  ) : null;
 }
 
 function Item({ type, message }) {
