@@ -9,8 +9,8 @@ const NOTIFICATION_TYPE = {
 };
 
 const notifications = [
-  { id: 1, type: NOTIFICATION_TYPE.LIKE, message: "Lorem ipsum 0" },
-  { id: 2, type: NOTIFICATION_TYPE.COMMENT, message: "Lorem ipsum 1" },
+  { id: 1, type: NOTIFICATION_TYPE.LIKE, message: "Lorem ipsum current" },
+  { id: 2, type: NOTIFICATION_TYPE.COMMENT, message: "Lorem ipsum next" },
   { id: 3, type: NOTIFICATION_TYPE.LIKE, message: "Lorem ipsum 2" },
   { id: 4, type: NOTIFICATION_TYPE.COMMENT, message: "Lorem ipsum 3" },
   { id: 5, type: NOTIFICATION_TYPE.LIKE, message: "Lorem ipsum 4" },
