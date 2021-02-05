@@ -65,7 +65,9 @@ function Item({ message }) {
   return (
     <div className="item">
       <div className="header__inner">
-        <span className="header__title">{message}</span>
+        <div className="header__title">
+          <p>{message}</p>
+        </div>
       </div>
     </div>
   );
