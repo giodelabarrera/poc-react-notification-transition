@@ -14,6 +14,25 @@ p {
   margin: 0;
 }
 
+@keyframes growing-icon {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    visibility: visible;
+  }
+
+  46% {
+    transform: scale(1.16);
+    opacity: 100%;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 100%;
+    visibility: visible;
+  }
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -23,46 +42,92 @@ p {
   padding: 28px 64px;
 }
 
-/* .header__inner {
-  position: relative;
-} */
+.item {
+  display: flex;
+  align-items: center;
+}
 
-.header__title {
+.header__title p {
   font-size: 14px;
 }
 
-/* cuando entra */
-.fade-enter .item .header__title {
-  /* opacity: 0;
-  transform: translateY(-50%); */
+.fade-enter .header__title {
   opacity: 0;
   transform: translateY(7px);
 }
-/* una vez dentro */
-.fade-enter-active .item .header__title {
-  /* opacity: 1;
-  transform: translateY(0%); */
+
+.fade-enter-active .header__title {
   transform: translateY(0%);
   opacity: 1;
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   transition-delay: 0.15s;
 }
-/* cuando sale */
-.fade-exit .item .header__title {
-  /* opacity: 1;
-  transform: translateY(0%); */
+
+.fade-exit .header__title {
   transform: translateY(0%);
 }
-/* una vez fuera */
-.fade-exit-active .item .header__title {
-  /* opacity: 0;
-  transform: translateY(50%); */
+
+.fade-exit-active .header__title {
   transform: translateY(-20px);
   opacity: 0;
   transition: transform 0.3s ease-in, opacity 0.3s ease-in;
 }
 
-/* .fade-enter-active .item,
-.fade-exit-active .item {
-  transition: opacity 500ms, transform 500ms;
-} */
+.header__icon {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: #f0f7fc;
+}
+
+.header__icon-svg {
+  z-index: 100;
+  transform: translate3d(0, 0, 0);
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+}
+.fade-enter .header__icon-svg {
+  visibility: hidden;
+  backface-visibility: hidden;
+}
+.fade-enter-done .header__icon-svg {
+  animation-name: growing-icon;
+  animation-duration: 0.65s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.fade-exit-active .header__icon-svg {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.05s linear, visibility 0s 0.05s linear;
+}
+
+.header__icon-first-wave {
+  transform: translate(-50%, -50%) scale(0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  opacity: 0;
+  background-color: blue;
+}
+.fade-enter-active .header__icon-first-wave {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.3;
+  transition: transform 0.25s ease-out, opacity 0.35s ease-in-out;
+}
+.fade-enter-done .header__icon-first-wave {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.3;
+}
