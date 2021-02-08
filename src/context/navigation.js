@@ -43,4 +43,4 @@ function useNavigation() {
   return context;
 }
 
-export { NavigationProvider, useNavigation };
+export { NavigationProvider, useNavigation, NAVIGATION_DIRECTION };
