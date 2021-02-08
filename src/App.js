@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 import { Button } from "react-bootstrap";
 import "./styles.css";
+import { NavigationProvider, useNavigation } from "./context/navigation";
 
 const NOTIFICATION_TYPE = {
   LIKE: "like",
@@ -24,10 +25,27 @@ const notifications = [
 ];
 
 function App() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  return (
+    <NavigationProvider>
+      <Main />
+    </NavigationProvider>
+  );
+}
+
+function Main() {
+  const {
+    currentIndex,
+    navDirection,
+    moveToPrev,
+    moveToNext,
+  } = useNavigation();
+
+  const handlePrevClick = () => {
+    moveToPrev();
+  };
 
   const handleNextClick = () => {
-    setCurrentIndex((prevCurrentIndex) => prevCurrentIndex + 1);
+    moveToNext();
   };
 
   const notification = notifications[currentIndex];
@@ -37,10 +55,17 @@ function App() {
     <div className="app">
       <main>
         <Header>
-          <Item type={type} message={message} currentIndex={currentIndex} />
+          <Item
+            type={type}
+            message={message}
+            currentIndex={currentIndex}
+            navDirection={navDirection}
+          />
         </Header>
-
-        <Button onClick={handleNextClick}>Next</Button>
+        <Button className="prev-btn" onClick={handlePrevClick}>
+          ⬅️ Prev
+        </Button>
+        <Button onClick={handleNextClick}>Next ➡️ </Button>
       </main>
     </div>
   );
@@ -50,7 +75,7 @@ function Header({ children }) {
   return <header className="header">{children}</header>;
 }
 
-function Item({ type, message, currentIndex }) {
+function Item({ type, message, currentIndex, navDirection }) {
   return (
     <div className="item">
       <SwitchTransition>
