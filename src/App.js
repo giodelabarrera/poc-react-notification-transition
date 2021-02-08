@@ -59,7 +59,7 @@ function Item({ type, message, currentIndex }) {
           addEndListener={(node, done) => {
             node.addEventListener("transitionend", done, false);
           }}
-          classNames="fade"
+          classNames="fade-icon"
         >
           <div>
             <div className="header__icon">
@@ -89,7 +89,7 @@ function Item({ type, message, currentIndex }) {
           addEndListener={(node, done) => {
             node.addEventListener("transitionend", done, false);
           }}
-          classNames="fade"
+          classNames="fade-title"
         >
           <div>
             <div className="header__inner">

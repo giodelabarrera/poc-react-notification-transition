@@ -51,23 +51,23 @@ p {
   font-size: 14px;
 }
 
-.fade-enter .header__title {
+.fade-title-enter .header__title {
   opacity: 0;
   transform: translateY(7px);
 }
 
-.fade-enter-active .header__title {
+.fade-title-enter-active .header__title {
   transform: translateY(0%);
   opacity: 1;
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   transition-delay: 0.15s;
 }
 
-.fade-exit .header__title {
+.fade-title-exit .header__title {
   transform: translateY(0%);
 }
 
-.fade-exit-active .header__title {
+.fade-title-exit-active .header__title {
   transform: translateY(-20px);
   opacity: 0;
   transition: transform 0.3s ease-in, opacity 0.3s ease-in;
@@ -95,17 +95,17 @@ p {
   width: 24px;
   height: 24px;
 }
-.fade-enter .header__icon-svg {
+.fade-icon-enter .header__icon-svg {
   visibility: hidden;
   backface-visibility: hidden;
 }
-.fade-enter-done .header__icon-svg {
+.fade-icon-enter-done .header__icon-svg {
   animation-name: growing-icon;
   animation-duration: 0.65s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
-.fade-exit-active .header__icon-svg {
+.fade-icon-exit-active .header__icon-svg {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.05s linear, visibility 0s 0.05s linear;
@@ -122,12 +122,12 @@ p {
   opacity: 0;
   background-color: blue;
 }
-.fade-enter-active .header__icon-first-wave {
+.fade-icon-enter-active .header__icon-first-wave {
   transform: translate(-50%, -50%) scale(1);
   opacity: 0.3;
   transition: transform 0.25s ease-out, opacity 0.35s ease-in-out;
 }
-.fade-enter-done .header__icon-first-wave {
+.fade-icon-enter-done .header__icon-first-wave {
   transform: translate(-50%, -50%) scale(1);
   opacity: 0.3;
 }
@@ -142,13 +142,13 @@ p {
   border-radius: 50%;
   background-color: #f0f7fc;
 }
-.fade-enter-active .header__icon-second-wave {
+.fade-icon-enter-active .header__icon-second-wave {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
   transition: transform 0.25s ease-out, opacity 0.25s ease-in-out;
   transition-delay: 0.15s;
 }
-.fade-enter-done .header__icon-second-wave {
+.fade-icon-enter-done .header__icon-second-wave {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
 }
