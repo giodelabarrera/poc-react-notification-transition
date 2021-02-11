@@ -1,2 +1,3 @@
-# poc-react-notification-transition
-Created with CodeSandbox
+# poc-react-render-transitions
+
+> Add transitions between react renders
