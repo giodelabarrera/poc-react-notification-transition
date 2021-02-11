@@ -8,7 +8,7 @@ import {
   NAVIGATION_DIRECTION,
   useNavigation,
 } from "./context/navigation";
-import "./styles.css";
+import "./styles.scss";
 
 const NOTIFICATION_TYPE = {
   LIKE: "like",
@@ -57,7 +57,7 @@ function Main() {
     <div className="app">
       <main>
         <Header>
-          <Item
+          <HeaderContent
             type={type}
             message={message}
             currentIndex={currentIndex}
@@ -83,12 +83,12 @@ function Header({ children }) {
   return <header className="header">{children}</header>;
 }
 
-function Item({ type, message, currentIndex, navDirection }) {
+function HeaderContent({ type, message, currentIndex, navDirection }) {
   return (
     <div
-      className={cx("item", {
-        "item--is-next": navDirection === NAVIGATION_DIRECTION.NEXT,
-        "item--is-prev": navDirection === NAVIGATION_DIRECTION.PREV,
+      className={cx("header__content", {
+        "header__content--is-next": navDirection === NAVIGATION_DIRECTION.NEXT,
+        "header__content--is-prev": navDirection === NAVIGATION_DIRECTION.PREV,
       })}
     >
       <SwitchTransition>

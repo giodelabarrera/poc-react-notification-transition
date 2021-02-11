@@ -18,25 +18,6 @@ p {
   margin-right: 8px;
 }
 
-@keyframes growing-icon {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-    visibility: visible;
-  }
-
-  46% {
-    transform: scale(1.16);
-    opacity: 100%;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 100%;
-    visibility: visible;
-  }
-}
-
 .header {
   display: flex;
   align-items: center;
@@ -46,7 +27,7 @@ p {
   padding: 28px 64px;
 }
 
-.item {
+.header__content {
   display: flex;
   align-items: center;
 }
@@ -55,37 +36,37 @@ p {
   font-size: 14px;
 }
 
-.item--is-next .fade-title-enter .header__title {
+.header__content--is-next .fade-title-enter .header__title {
   opacity: 0;
   transform: translateY(20px);
 }
-.item--is-next .fade-title-enter-active .header__title {
+.header__content--is-next .fade-title-enter-active .header__title {
   transform: translateY(0%);
   opacity: 1;
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
-.item--is-next .fade-title-exit .header__title {
+.header__content--is-next .fade-title-exit .header__title {
   transform: translateY(0%);
 }
-.item--is-next .fade-title-exit-active .header__title {
+.header__content--is-next .fade-title-exit-active .header__title {
   transform: translateY(-20px);
   opacity: 0;
   transition: transform 0.3s ease-in, opacity 0.3s ease-in;
 }
 
-.item--is-prev .fade-title-enter .header__title {
+.header__content--is-prev .fade-title-enter .header__title {
   opacity: 0;
   transform: translateY(-20px);
 }
-.item--is-prev .fade-title-enter-active .header__title {
+.header__content--is-prev .fade-title-enter-active .header__title {
   transform: translateY(0%);
   opacity: 1;
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
-.item--is-prev .fade-title-exit .header__title {
+.header__content--is-prev .fade-title-exit .header__title {
   transform: translateY(0%);
 }
-.item--is-prev .fade-title-exit-active .header__title {
+.header__content--is-prev .fade-title-exit-active .header__title {
   transform: translateY(20px);
   opacity: 0;
   transition: transform 0.3s ease-in, opacity 0.3s ease-in;
@@ -169,4 +150,23 @@ p {
 .fade-icon-enter-done .header__icon-second-wave {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
+}
+
+@keyframes growing-icon {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    visibility: visible;
+  }
+
+  46% {
+    transform: scale(1.16);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
 }
