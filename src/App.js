@@ -104,7 +104,7 @@ function HeaderContent({ type, message, currentIndex, navDirection }) {
           }}
           classNames="fade-title"
         >
-          <div style={{ height: "32px" }}>
+          <div>
             <span className="header__title">{message}</span>
           </div>
         </CSSTransition>
