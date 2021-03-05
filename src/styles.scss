@@ -27,9 +27,6 @@ p {
   padding: 28px 64px;
 }
 
-
-
-// Notification title
 .header__content {
   width: 100%;
   display: flex;
@@ -50,9 +47,6 @@ p {
   font-size: 14px;
   line-height: 19px;
 }
-
-
-// Notification icon
 
 .header__icon {
   position: relative;
@@ -78,7 +72,6 @@ p {
   //visibility: hidden;
   backface-visibility: hidden;
 }
-
 
 .header__icon-first-wave {
   transform: translate(-50%, -50%) scale(0);
@@ -108,12 +101,9 @@ p {
 
 
 
-
-
 // Next transition styles
 // Title
 .header__content--is-next {
-
   .fade-icon-exit {
     .header__icon-svg {
       opacity: 0;
@@ -149,8 +139,6 @@ p {
     }
   }
 
-
-
   .fade-title-enter {
     .header__title {
       transform: translateY(33px);
@@ -176,6 +164,38 @@ p {
   .fade-title-exit-active {
     .header__title {
       transform: translateY(-20px);
+      opacity: 0;
+      transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+    }
+  }
+}
+
+
+
+
+
+//Previous animation
+
+.header__content--is-prev {
+  .fade-title-enter {
+    .header__title {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+  }
+
+  .fade-title-enter-active {
+    .header__title {
+      transform: translateY(7px);
+      opacity: 1;
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+      transition-delay: 0.15s;
+    }
+  }
+
+  .fade-title-exit {
+    .header__title {
+      transform: translateY(33px);
       opacity: 0;
       transition: transform 0.3s ease-in, opacity 0.3s ease-in;
     }
