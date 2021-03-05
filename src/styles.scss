@@ -104,41 +104,6 @@ p {
 // Next transition styles
 // Title
 .header__content--is-next {
-  .fade-icon-exit {
-    .header__icon-svg {
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.05s linear, visibility 0s 0.05s linear;
-    }
-    .header__icon-first-wave {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 0.3;
-      transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
-    }
-    .header__icon-second-wave {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 1;
-      transition: transform 0.25s ease-out, opacity 0.25s ease-out;
-      transition-delay: 0.13s;
-    }
-  }
-
-  .fade-icon-enter {
-    .header__icon-svg {
-      visibility: hidden;
-    }
-  }
-
-  .fade-icon-enter-active {
-    .header__icon-svg {
-      animation-name: growing-icon;
-      animation-delay: 0.25s;
-      animation-duration: 0.65s;
-      animation-timing-function: ease-in-out;
-      animation-fill-mode: forwards;
-    }
-  }
-
   .fade-title-enter {
     .header__title {
       transform: translateY(33px);
@@ -198,6 +163,45 @@ p {
       transform: translateY(33px);
       opacity: 0;
       transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+    }
+  }
+}
+
+
+.header__content--is-next,
+.header__content--is-prev {
+.fade-icon-exit {
+    .header__icon-svg {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.05s linear, visibility 0s 0.05s linear;
+    }
+    .header__icon-first-wave {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.3;
+      transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
+    }
+    .header__icon-second-wave {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+      transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+      transition-delay: 0.13s;
+    }
+  }
+
+  .fade-icon-enter {
+    .header__icon-svg {
+      visibility: hidden;
+    }
+  }
+
+  .fade-icon-enter-active {
+    .header__icon-svg {
+      animation-name: growing-icon;
+      animation-delay: 0.25s;
+      animation-duration: 0.65s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
     }
   }
 }
