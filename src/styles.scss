@@ -101,8 +101,7 @@ p {
 
 
 
-// Next transition styles
-// Title
+// Next title transition
 .header__content--is-next {
   .fade-title-enter {
     .header__title {
@@ -139,8 +138,7 @@ p {
 
 
 
-//Previous animation
-
+//Title prev transition
 .header__content--is-prev {
   .fade-title-enter {
     .header__title {
@@ -168,6 +166,10 @@ p {
 }
 
 
+
+
+
+// Icon prev and next animation
 .header__content--is-next,
 .header__content--is-prev {
 .fade-icon-exit {
