@@ -27,8 +27,12 @@ p {
   padding: 28px 64px;
 }
 
+
+
+// Notification title
 .header__content {
   width: 100%;
+  display: flex;
 }
 
 .header__inner {
@@ -48,12 +52,105 @@ p {
 }
 
 
+// Notification icon
+
+.header__icon {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: #f0f7fc;
+}
+
+.header__icon-svg {
+  z-index: 100;
+  transform: translate3d(0, 0, 0);
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  //visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
+.header__icon-first-wave {
+  transform: translate(-50%, -50%) scale(0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  opacity: 0;
+  background-color: #4560eb;
+}
+
+.header__icon-second-wave {
+  transform: translate(-50%, -50%) scale(0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  opacity: 0;
+  background-color: #f0f7fc;
+}
+
+
+
+
 
 
 
 // Next transition styles
-
+// Title
 .header__content--is-next {
+
+  .fade-icon-exit {
+    .header__icon-svg {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.05s linear, visibility 0s 0.05s linear;
+    }
+    .header__icon-first-wave {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.3;
+      transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
+    }
+    .header__icon-second-wave {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+      transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+      transition-delay: 0.13s;
+    }
+  }
+
+  .fade-icon-enter {
+    .header__icon-svg {
+      visibility: hidden;
+    }
+  }
+
+  .fade-icon-enter-active {
+    .header__icon-svg {
+      animation-name: growing-icon;
+      animation-delay: 0.25s;
+      animation-duration: 0.65s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+    }
+  }
+
+
+
   .fade-title-enter {
     .header__title {
       transform: translateY(33px);
@@ -82,5 +179,24 @@ p {
       opacity: 0;
       transition: transform 0.3s ease-in, opacity 0.3s ease-in;
     }
+  }
+}
+
+@keyframes growing-icon {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    visibility: visible;
+  }
+
+  46% {
+    transform: scale(1.16);
+    opacity: 100%;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 100%;
+    visibility: visible;
   }
 }
